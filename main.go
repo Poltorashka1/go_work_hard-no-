@@ -2,22 +2,17 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
+type AmericanVelocity float64
+type EuropeanVelocity float64
+
 func main() {
-	x := "12"
-	strConv, err := strconv.Atoi(x)
-	if err != nil {
-		fmt.Println("Error:", err)
-		return
-	}
-	fmt.Printf("Before conv %v - %T\n", x, x)
-	fmt.Printf("After conv %v - %T\n", strConv, strConv)
-	fmt.Println()
-	y := 24
-	intConv := strconv.Itoa(y)
-	fmt.Printf("Before conv %v - %T\n", y, y)
-	fmt.Printf("After conv %v - %T\n", intConv, intConv)
+	f := 120.4
+	s := float64(130)
+	x := AmericanVelocity(f) * 3.6
+	y := EuropeanVelocity(s) * 2.23694
+	fmt.Printf("%.2f \n", x)
+	fmt.Printf("%.2f", y)
 
 }
